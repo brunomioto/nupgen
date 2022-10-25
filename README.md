@@ -37,5 +37,5 @@ new_tree <- label_phy(seq, tree)
 new_tree$tip.label
 
 #Salva em um novo arquivo .nwk
-write.tree(new_tree, "nova_tree.nwk")
+ape::write.tree(new_tree, "nova_tree.nwk")
 ```

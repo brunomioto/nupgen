@@ -25,8 +25,8 @@ label_phy <- function(seq_fasta, tree){
     dplyr::mutate(novo_nome = substr(seq_longo, start = 1, stop = 10))
 
   novos_nomes <- tree_label %>%
-    left_join(tabela_junto, by = c("value" = "novo_nome")) %>%
-    pull(seq_longo)
+    dplyr::left_join(tabela_junto, by = c("value" = "novo_nome")) %>%
+    dplyr::pull(seq_longo)
 
   tree$tip.label <- novos_nomes
 
