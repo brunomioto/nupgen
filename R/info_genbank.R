@@ -57,7 +57,7 @@ info_genbank <- function(organism = "Aylacostoma brunneum[Organism]") {
     write(lizard_seqs, "lizards.gb") #gets sequence to a file
 
     usethis::ui_done("Etapa 5")
-    #seq <- read.gb::read.gb("lizards.gb")
+    seq <- read.gb::read.gb("lizards.gb")
 
     usethis::ui_done("Etapa 6")
     seq2 <- seq %>%
