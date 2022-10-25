@@ -95,4 +95,6 @@ info_genbank <- function(organism = "Aylacostoma brunneum[Organism]") {
     tidyr::drop_na("name") %>%
     dplyr::rename("code" = "name")
 
+  return(final_dataset)
+
 }

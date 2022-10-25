@@ -19,7 +19,7 @@ devtools::install_github("brunomioto/nupgen")
 
 ## Uso
 
-### Renomear arquivos PHYLIP
+### Renomear arquivos PHYLIP com `label_phy()`
 
 ``` r
 library(nupgen)
@@ -40,7 +40,7 @@ new_tree$tip.label
 ape::write.tree(new_tree, "nova_tree.nwk")
 ```
 
-### Obter informações de sequências do GenBank
+### Obter informações de sequências do GenBank com `info_genbank()`
 
 As informações buscadas são:
 
@@ -61,10 +61,10 @@ ayla %>%
 #> # A tibble: 6 x 6
 #>   name     organism             country    lat   lon gene 
 #>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
-#> 1 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 2 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 3 JQ236701 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 4 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 5 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 6 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+#> 1 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 2 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 3 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 4 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 5 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
+#> 6 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA>
 ```

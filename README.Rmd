@@ -31,7 +31,7 @@ devtools::install_github("brunomioto/nupgen")
 
 ## Uso
 
-### Renomear arquivos PHYLIP
+### Renomear arquivos PHYLIP com `label_phy()`
 
 ```{r example,eval=FALSE}
 library(nupgen)
@@ -53,7 +53,7 @@ ape::write.tree(new_tree, "nova_tree.nwk")
 
 ```
 
-### Obter informações de sequências do GenBank
+### Obter informações de sequências do GenBank com `info_genbank()`
 
 As informações buscadas são:
 
