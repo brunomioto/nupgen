@@ -53,3 +53,23 @@ ape::write.tree(new_tree, "nova_tree.nwk")
 
 ```
 
+### Obter informações de sequências do GenBank
+
+As informações buscadas são:
+
+- Código do GenBank
+- Nome do organismo
+- País de origem (pode conter mais informações)
+- Latitude
+- Longitude
+- Gene
+
+```{r example2, eval=TRUE, message=FALSE, warning=FALSE}
+library(nupgen)
+
+ayla <- info_genbank(organism = "Aylacostoma brunneum[Organism]")
+
+ayla %>% 
+  head()
+
+```

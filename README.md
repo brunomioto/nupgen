@@ -39,3 +39,32 @@ new_tree$tip.label
 #Salva em um novo arquivo .nwk
 ape::write.tree(new_tree, "nova_tree.nwk")
 ```
+
+### Obter informações de sequências do GenBank
+
+As informações buscadas são:
+
+-   Código do GenBank
+-   Nome do organismo
+-   País de origem (pode conter mais informações)
+-   Latitude
+-   Longitude
+-   Gene
+
+``` r
+library(nupgen)
+
+ayla <- info_genbank(organism = "Aylacostoma brunneum[Organism]")
+
+ayla %>% 
+  head()
+#> # A tibble: 6 x 6
+#>   name     organism             country    lat   lon gene 
+#>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
+#> 1 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 2 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 3 JQ236701 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 4 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
+#> 5 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 6 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+```

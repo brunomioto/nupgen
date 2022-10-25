@@ -4,10 +4,10 @@
 \alias{info_genbank}
 \title{Search for info from GenBank data}
 \usage{
-info_genbank(organism = "Aylacostoma[Organism]")
+info_genbank(organism = "Aylacostoma brunneum[Organism]")
 }
 \arguments{
-\item{organism}{The advanced search text from GenBank, like "Cichla piquiti\link{Organism}"}
+\item{organism}{The advanced search text from GenBank, like "Aylacostoma brunneum\link{Organism}"}
 }
 \value{
 
