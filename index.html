@@ -73,7 +73,8 @@
 <h2 id="uso">Uso<a class="anchor" aria-label="anchor" href="#uso"></a>
 </h2>
 <div class="section level3">
-<h3 id="renomear-arquivos-phylip">Renomear arquivos PHYLIP<a class="anchor" aria-label="anchor" href="#renomear-arquivos-phylip"></a>
+<h3 id="renomear-arquivos-phylip-com-label_phy">Renomear arquivos PHYLIP com <code>label_phy()</code>
+<a class="anchor" aria-label="anchor" href="#renomear-arquivos-phylip-com-label_phy"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/brunomioto/nupgen" class="external-link">nupgen</a></span><span class="op">)</span></span>
@@ -92,6 +93,36 @@
 <span></span>
 <span><span class="co">#Salva em um novo arquivo .nwk</span></span>
 <span><span class="fu">ape</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/ape/man/write.tree.html" class="external-link">write.tree</a></span><span class="op">(</span><span class="va">new_tree</span>, <span class="st">"nova_tree.nwk"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="obter-informações-de-sequências-do-genbank-com-info_genbank">Obter informações de sequências do GenBank com <code>info_genbank()</code>
+<a class="anchor" aria-label="anchor" href="#obter-informa%C3%A7%C3%B5es-de-sequ%C3%AAncias-do-genbank-com-info_genbank"></a>
+</h3>
+<p>As informações buscadas são:</p>
+<ul>
+<li>Código do GenBank</li>
+<li>Nome do organismo</li>
+<li>País de origem (pode conter mais informações)</li>
+<li>Latitude</li>
+<li>Longitude</li>
+<li>Gene</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/brunomioto/nupgen" class="external-link">nupgen</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ayla</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/info_genbank.html">info_genbank</a></span><span class="op">(</span>organism <span class="op">=</span> <span class="st">"Aylacostoma brunneum[Organism]"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">ayla</span> <span class="op"><a href="reference/pipe.html">%&gt;%</a></span> </span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 6 x 6</span></span>
+<span><span class="co">#&gt;   name     organism             country    lat   lon gene </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;    &lt;chr&gt;                &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;</span></span>
+<span><span class="co">#&gt; 1 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  </span></span>
+<span><span class="co">#&gt; 2 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  </span></span>
+<span><span class="co">#&gt; 3 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 &lt;NA&gt; </span></span>
+<span><span class="co">#&gt; 4 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  </span></span>
+<span><span class="co">#&gt; 5 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb </span></span>
+<span><span class="co">#&gt; 6 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 &lt;NA&gt;</span></span></code></pre></div>
 </div>
 </div>
 </div>
