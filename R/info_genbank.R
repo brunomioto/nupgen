@@ -63,25 +63,25 @@ info_genbank <- function(organism = "Aylacostoma brunneum[Organism]") {
     seq2 <- seq %>%
       unlist(recursive = FALSE) %>%
       tibble::enframe() %>%
-      dplyr::filter(stringr::str_detect("name", "FEATURES")) %>%
+      dplyr::filter(stringr::str_detect(name, "FEATURES")) %>%
       tidyr::unnest(cols = "value") %>%
       tidyr::unnest(cols = "value") %>%
-      dplyr::mutate("name" = stringr::str_remove("name", "\\.FEATURES")) %>%
-      dplyr::filter("Location" %in% c("organism", "lat_lon", "country", "gene"),
-                    !stringr::str_detect("Qualifier", "\\<|\\>")) %>%
+      dplyr::mutate("name" = stringr::str_remove(name, "\\.FEATURES")) %>%
+      dplyr::filter(Location %in% c("organism", "lat_lon", "country", "gene"),
+                    !stringr::str_detect(Qualifier, "\\<|\\>")) %>%
       dplyr::distinct() %>%
       tidyr::pivot_wider(
         names_from = "Location",
         values_from = "Qualifier",
       ) %>%
       tidyr::separate("lat_lon", sep = "\\s",into = c("lat","N_S", "lon","E_W")) %>%
-      dplyr::mutate("lat" = ifelse("N_S" == "N", as.numeric("lat"), -as.numeric("lat")),
-                    "lon" = ifelse("E_W" == "N", as.numeric("lon"), -as.numeric("lon")),
+      dplyr::mutate("lat" = ifelse("N_S" == "N", as.numeric(lat), -as.numeric(lat)),
+                    "lon" = ifelse("E_W" == "N", as.numeric(lon), -as.numeric(lon)),
                     #gene = ifelse(stringr::str_detect(gene, "\\COX1"), "COI", gene)
       ) %>%
       dplyr::select(-c("N_S", "E_W"))
 
-    usethis::ui_done("Parte 7")
+    usethis::ui_done("Etapa 7")
     dataset_ids <- dplyr::bind_rows(dataset_ids, ids_sample)
     dataset <- dplyr::bind_rows(dataset, seq2)
 
