@@ -17,9 +17,3 @@ a .nwk object
 \description{
 Label phylip files
 }
-\examples{
-seq_normal <- ape::read.FASTA("alinhamento_cortado_2022_10_13_mioto_outgroup_3_limpo.fas")
-tree_exe <- ape::read.tree("file.nwk")
-new_tree <- label_phy(seq_normal, tree_exe)
-write.tree(new_tree, "new_tree.nwk")
-}

@@ -6,11 +6,6 @@
 #' @return a .nwk object
 #' @export
 #'
-#' @examples
-#' seq_normal <- ape::read.FASTA("alinhamento_cortado_2022_10_13_mioto_outgroup_3_limpo.fas")
-#' tree_exe <- ape::read.tree("file.nwk")
-#' new_tree <- label_phy(seq_normal, tree_exe)
-#' write.tree(new_tree, "new_tree.nwk")
 
 label_phy <- function(seq_fasta, tree){
 
@@ -21,12 +16,12 @@ label_phy <- function(seq_fasta, tree){
     dplyr::as_tibble()
 
   tabela_junto <- seq_names %>%
-    dplyr::rename(seq_longo = value) %>%
-    dplyr::mutate(novo_nome = substr(seq_longo, start = 1, stop = 10))
+    dplyr::rename("seq_longo" = "value") %>%
+    dplyr::mutate("novo_nome" = substr("seq_longo", start = 1, stop = 10))
 
   novos_nomes <- tree_label %>%
     dplyr::left_join(tabela_junto, by = c("value" = "novo_nome")) %>%
-    dplyr::pull(seq_longo)
+    dplyr::pull("seq_longo")
 
   tree$tip.label <- novos_nomes
 
