@@ -15,4 +15,10 @@ BugReports: https://github.com/brunomioto/nupgen/issues
 Imports: 
     ape,
     dplyr,
-    magrittr
+    glue,
+    magrittr,
+    read.gb,
+    rentrez,
+    tibble,
+    tidyr,
+    usethis
