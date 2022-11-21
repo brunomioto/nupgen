@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# nupgen
+# nupgen <a href="https://brunomioto.github.io/nupgen/"><img src="man/figures/logo.png" align="right" height="106" /></a>
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -61,11 +61,11 @@ ayla %>%
 #> # A tibble: 6 x 6
 #>   code     organism             country    lat   lon gene 
 #>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
-#> 1 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 2 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 3 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 4 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 5 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 1 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
+#> 2 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 3 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 4 JQ236705 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 5 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
 #> 6 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
 ```
 
