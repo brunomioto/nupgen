@@ -19,6 +19,7 @@ Imports:
     magrittr,
     read.gb,
     rentrez,
+    stringr,
     tibble,
     tidyr,
     usethis

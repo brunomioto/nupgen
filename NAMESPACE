@@ -3,4 +3,5 @@
 export("%>%")
 export(info_genbank)
 export(label_phy)
+export(ptp_results)
 importFrom(magrittr,"%>%")
