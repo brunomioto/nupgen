@@ -44,12 +44,12 @@ ape::write.tree(new_tree, "nova_tree.nwk")
 
 As informações buscadas são:
 
--   Código do GenBank
--   Nome do organismo
--   País de origem (pode conter mais informações)
--   Latitude
--   Longitude
--   Gene
+- Código do GenBank
+- Nome do organismo
+- País de origem (pode conter mais informações)
+- Latitude
+- Longitude
+- Gene
 
 ``` r
 library(nupgen)
@@ -59,12 +59,53 @@ ayla <- info_genbank(organism = "Aylacostoma brunneum[Organism]")
 ayla %>% 
   head()
 #> # A tibble: 6 x 6
-#>   name     organism             country    lat   lon gene 
+#>   code     organism             country    lat   lon gene 
 #>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
-#> 1 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 1 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
 #> 2 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
 #> 3 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 4 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 5 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 6 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA>
+#> 4 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
+#> 5 JQ236702 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 6 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+```
+
+### Formatar resultados da Delimitação de Espécies do PTP (ou bPTP) com `ptp_results()`
+
+Copie os resultados do PTP e salve como um vetor (Só abrir aspas e colar
+todo o resultado)
+
+``` r
+vetor_ptp <- "# Max likilhood partition 
+Species 1 (support = 0.329)
+     MZ051026_Characidium_pellucidum_voucher_SU08-1290,MZ051108_Characidium_pellucidum_voucher_SU08-1290_4,MZ051140_Characidium_pellucidum_voucher_SU08-1290_3
+
+Species 2 (support = 0.668)
+     MG936837_Characidium_marshi_voucher_stri-3611,MG936835_Characidium_marshi_voucher_stri-11821,MG936836_Characidium_marshi_voucher_stri-4069,MG936834_Characidium_marshi_voucher_stri-6730
+
+Species 3 (support = 0.738)
+     KU288836_Characidium_rachovii_voucher_MG_ZV-P_172-2,JX111702_Characidium_rachovii_voucher_UNMDP-T_0289,KU288852_Characidium_rachovii_voucher_MG_ZV-P_172-3,KU288835_Characidium_rachovii_voucher_MG_ZV-P_172-1,KU288853_Characidium_rachovii_voucher_MG_ZV-P_172-4,KU288854_Characidium_rachovii_voucher_MG_ZV-P_172-5,KU289033_Characidium_rachovii_voucher_MG_ZV-P_309
+
+Species 4 (support = 0.188)
+     MK464095_Characidium_zebra_isolate_JCB77,MK464130_Characidium_zebra_isolate_JCB286,MK464156_Characidium_zebra_isolate_JCB354,MK464155_Characidium_zebra_isolate_JCB352,MK464153_Characidium_zebra_isolate_JCB349,MK464093_Characidium_zebra_isolate_JCB70,MK464047_Characidium_fasciatum_isolate_CIUnB884_a,MK464134_Characidium_zebra_isolate_JCB298,MK464048_Characidium_fasciatum_isolate_CIUnB884_b,MK464137_Characidium_zebra_isolate_JCB311,MK464135_Characidium_zebra_isolate_JCB299,MK464092_Characidium_zebra_isolate_JCB69,MK464125_Characidium_zebra_isolate_JCB220,MK464040_Characidium_zebra_isolate_CIUnB846_2,MK464152_Characidium_zebra_isolate_JCB348,MK464138_Characidium_zebra_isolate_JCB315,MK464131_Characidium_zebra_isolate_JCB287,MK464126_Characidium_zebra_isolate_JCB221,MK464139_Characidium_zebra_isolate_JCB316,MK464154_Characidium_zebra_isolate_JCB351,MK464094_Characidium_zebra_isolate_JCB76,MK464039_Characidium_zebra_isolate_CIUnB846_1,MK464132_Characidium_zebra_isolate_JCB294,MK464133_Characidium_zebra_isolate_JCB297,MK464140_Characidium_zebra_isolate_JCB317
+"
+```
+
+Depois, utilize esse vetor dentro da função `ptp_results()`
+
+``` r
+ptp_results(vetor_ptp)
+#> # A tibble: 39 x 2
+#>    label                                               species
+#>    <chr>                                               <chr>  
+#>  1 MZ051026_Characidium_pellucidum_voucher_SU08-1290   1      
+#>  2 MZ051108_Characidium_pellucidum_voucher_SU08-1290_4 1      
+#>  3 MZ051140_Characidium_pellucidum_voucher_SU08-1290_3 1      
+#>  4 MG936837_Characidium_marshi_voucher_stri-3611       2      
+#>  5 MG936835_Characidium_marshi_voucher_stri-11821      2      
+#>  6 MG936836_Characidium_marshi_voucher_stri-4069       2      
+#>  7 MG936834_Characidium_marshi_voucher_stri-6730       2      
+#>  8 KU288836_Characidium_rachovii_voucher_MG_ZV-P_172-2 3      
+#>  9 JX111702_Characidium_rachovii_voucher_UNMDP-T_0289  3      
+#> 10 KU288852_Characidium_rachovii_voucher_MG_ZV-P_172-3 3      
+#> # ... with 29 more rows
 ```
