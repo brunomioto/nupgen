@@ -17,7 +17,7 @@ label_phy <- function(seq_fasta, tree){
 
   tabela_junto <- seq_names %>%
     dplyr::rename("seq_longo" = "value") %>%
-    dplyr::mutate("novo_nome" = substr("seq_longo", start = 1, stop = 10))
+    dplyr::mutate("novo_nome" = substr(.data$seq_longo, start = 1, stop = 10))
 
   novos_nomes <- tree_label %>%
     dplyr::left_join(tabela_junto, by = c("value" = "novo_nome")) %>%
