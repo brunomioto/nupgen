@@ -13,8 +13,8 @@ Pacote de uso interno do laboratório Nupgen DBC/Nupélia
 Você pode instalar o pacote nupgen direto do Github usando:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("brunomioto/nupgen")
+# install.packages("remotes")
+remotes::install_github("brunomioto/nupgen")
 ```
 
 ## Uso
@@ -63,10 +63,10 @@ ayla %>%
 #>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
 #> 1 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
 #> 2 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 3 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 4 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 5 JQ236701 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 6 JQ236705 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+#> 3 JQ236701 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 4 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 5 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
+#> 6 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
 ```
 
 ### Formatar resultados da Delimitação de Espécies do PTP (ou bPTP) com `ptp_results()`

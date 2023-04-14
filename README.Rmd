@@ -24,8 +24,8 @@ Pacote de uso interno do laboratório Nupgen DBC/Nupélia
 Você pode instalar o pacote nupgen direto do Github usando:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("brunomioto/nupgen")
+# install.packages("remotes")
+remotes::install_github("brunomioto/nupgen")
 ```
 ```{r,echo=FALSE, warning=FALSE, message=FALSE}
 devtools::load_all()
