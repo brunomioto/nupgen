@@ -9,9 +9,6 @@ info_genbank(organism = "Aylacostoma brunneum[Organism]")
 \arguments{
 \item{organism}{The advanced search text from GenBank, like "Aylacostoma brunneum\link{Organism}"}
 }
-\value{
-
-}
 \description{
 Search for info from GenBank data
 }

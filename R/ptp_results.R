@@ -2,7 +2,6 @@
 #'
 #' @param vector
 #'
-#' @return
 #' @export
 ptp_results <- function(vector) {
   new_ptp <- vector %>%

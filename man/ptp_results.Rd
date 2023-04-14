@@ -9,9 +9,6 @@ ptp_results(vector)
 \arguments{
 \item{vector}{}
 }
-\value{
-
-}
 \description{
 Format PTP Species Delimitation results
 }

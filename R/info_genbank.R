@@ -2,7 +2,6 @@
 #'
 #' @param organism The advanced search text from GenBank, like "Aylacostoma brunneum[Organism]"
 #'
-#' @return
 #' @export
 #'
 info_genbank <- function(organism = "Aylacostoma brunneum[Organism]") {

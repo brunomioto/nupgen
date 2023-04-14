@@ -61,12 +61,12 @@ ayla %>%
 #> # A tibble: 6 x 6
 #>   code     organism             country    lat   lon gene 
 #>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
-#> 1 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 2 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 3 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 4 JQ236705 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 5 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 6 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+#> 1 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 2 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 3 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 4 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
+#> 5 JQ236701 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 6 JQ236705 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
 ```
 
 ### Formatar resultados da Delimitação de Espécies do PTP (ou bPTP) com `ptp_results()`
@@ -108,4 +108,45 @@ ptp_results(vetor_ptp)
 #>  9 JX111702_Characidium_rachovii_voucher_UNMDP-T_0289  3      
 #> 10 KU288852_Characidium_rachovii_voucher_MG_ZV-P_172-3 3      
 #> # ... with 29 more rows
+```
+
+### Formatar resultados da análise de haplótipos do DNAsp com `hap_results()`
+
+Copie os resultados análise de haplótipos do DNAsp e salve como um vetor
+(Só abrir aspas e colar a parte dos resultados que contém os haplótipos
+e nome das sequências)
+
+``` r
+vetor_hap <- "    Hap_1: 1  [ANGBF36849-19|Eigenmannia_viresc]
+    Hap_2: 1  [ANGBF36850-19|Eigenmannia_viresc]
+    Hap_3: 2  [ANGBF56488-19|Eigenmannia_trilin BFFDF015-19|Eigenmannia_trilinea]
+    Hap_4: 2  [BSB261-10|Eigenmannia_virescens| BSB264-10|Eigenmannia_virescens|]
+    Hap_5: 2  [BSB262-10|Eigenmannia_virescens| BSB260-10|Eigenmannia_virescens|]
+    Hap_6: 1  [BSB263-10|Eigenmannia_virescens|]
+    Hap_7: 4  [BSFFA646-07|Eigenmannia_humboldt BSFFA647-07|Eigenmannia_humboldt ANGBF36843-19|Eigenmannia_humbol ANGBF36844-19|Eigenmannia_humbol]
+    Hap_8: 1  [CIUA1137-21|Eigenmannia_virescen]
+"
+```
+
+Depois, utilize esse vetor dentro da função `hap_results()`
+
+``` r
+hap_results(vetor_hap)
+#> # A tibble: 14 x 2
+#>    haplotype seq                             
+#>    <chr>     <chr>                           
+#>  1 1         ANGBF36849-19|Eigenmannia_viresc
+#>  2 2         ANGBF36850-19|Eigenmannia_viresc
+#>  3 3         ANGBF56488-19|Eigenmannia_trilin
+#>  4 3         BFFDF015-19|Eigenmannia_trilinea
+#>  5 4         BSB261-10|Eigenmannia_virescens|
+#>  6 4         BSB264-10|Eigenmannia_virescens|
+#>  7 5         BSB262-10|Eigenmannia_virescens|
+#>  8 5         BSB260-10|Eigenmannia_virescens|
+#>  9 6         BSB263-10|Eigenmannia_virescens|
+#> 10 7         BSFFA646-07|Eigenmannia_humboldt
+#> 11 7         BSFFA647-07|Eigenmannia_humboldt
+#> 12 7         ANGBF36843-19|Eigenmannia_humbol
+#> 13 7         ANGBF36844-19|Eigenmannia_humbol
+#> 14 8         CIUA1137-21|Eigenmannia_virescen
 ```

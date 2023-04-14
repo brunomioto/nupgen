@@ -27,6 +27,9 @@ Você pode instalar o pacote nupgen direto do Github usando:
 # install.packages("devtools")
 devtools::install_github("brunomioto/nupgen")
 ```
+```{r,echo=FALSE, warning=FALSE, message=FALSE}
+devtools::load_all()
+```
 
 ## Uso
 
@@ -100,4 +103,25 @@ Depois, utilize esse vetor dentro da função `ptp_results()`
 ptp_results(vetor_ptp)
 ```
 
+### Formatar resultados da análise de haplótipos do DNAsp com `hap_results()`
 
+
+Copie os resultados análise de haplótipos do DNAsp e salve como um vetor (Só abrir aspas e colar a parte dos resultados que contém os haplótipos e nome das sequências)
+
+```{r vetor_hap}
+vetor_hap <- "    Hap_1: 1  [ANGBF36849-19|Eigenmannia_viresc]
+    Hap_2: 1  [ANGBF36850-19|Eigenmannia_viresc]
+    Hap_3: 2  [ANGBF56488-19|Eigenmannia_trilin BFFDF015-19|Eigenmannia_trilinea]
+    Hap_4: 2  [BSB261-10|Eigenmannia_virescens| BSB264-10|Eigenmannia_virescens|]
+    Hap_5: 2  [BSB262-10|Eigenmannia_virescens| BSB260-10|Eigenmannia_virescens|]
+    Hap_6: 1  [BSB263-10|Eigenmannia_virescens|]
+    Hap_7: 4  [BSFFA646-07|Eigenmannia_humboldt BSFFA647-07|Eigenmannia_humboldt ANGBF36843-19|Eigenmannia_humbol ANGBF36844-19|Eigenmannia_humbol]
+    Hap_8: 1  [CIUA1137-21|Eigenmannia_virescen]
+"
+```
+
+Depois, utilize esse vetor dentro da função `hap_results()`
+
+```{r hap_tabela}
+hap_results(vetor_hap)
+```
