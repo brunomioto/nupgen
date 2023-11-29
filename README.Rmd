@@ -125,3 +125,20 @@ Depois, utilize esse vetor dentro da função `hap_results()`
 ```{r hap_tabela}
 hap_results(vetor_hap)
 ```
+
+
+### Selecionar sequencias únicas de cada haplotipo com `select_seqs_by_hap()`
+
+Copie os resultados análise de haplótipos do DNAsp e salve como um vetor (Só abrir aspas e colar a parte dos resultados que contém os haplótipos e nome das sequências).
+
+Carregue o alinhamento (usando `ape::read.FASTA()`) e salve como um objeto
+
+Depois, utilize o vetor e o alinhamento dentro da função `select_seqs_by_hap()`
+
+```{r hap_seqs, eval=FALSE}
+selected_seqs <- select_seqs_by_hap(haps, seqs)
+```
+
+Por fim, salve o alinhamento com as sequências selecionadas utilizando `
+ape::write.FASTA()`
+

@@ -58,15 +58,15 @@ ayla <- info_genbank(organism = "Aylacostoma brunneum[Organism]")
 
 ayla %>% 
   head()
-#> # A tibble: 6 x 6
+#> # A tibble: 6 × 6
 #>   code     organism             country    lat   lon gene 
 #>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
-#> 1 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 2 JQ236700 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 3 JQ236701 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 4 KU168374 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 1 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 2 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
+#> 3 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
+#> 4 JQ236705 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
 #> 5 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 6 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+#> 6 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
 ```
 
 ### Formatar resultados da Delimitação de Espécies do PTP (ou bPTP) com `ptp_results()`
@@ -94,7 +94,7 @@ Depois, utilize esse vetor dentro da função `ptp_results()`
 
 ``` r
 ptp_results(vetor_ptp)
-#> # A tibble: 39 x 2
+#> # A tibble: 39 × 2
 #>    label                                               species
 #>    <chr>                                               <chr>  
 #>  1 MZ051026_Characidium_pellucidum_voucher_SU08-1290   1      
@@ -107,7 +107,7 @@ ptp_results(vetor_ptp)
 #>  8 KU288836_Characidium_rachovii_voucher_MG_ZV-P_172-2 3      
 #>  9 JX111702_Characidium_rachovii_voucher_UNMDP-T_0289  3      
 #> 10 KU288852_Characidium_rachovii_voucher_MG_ZV-P_172-3 3      
-#> # ... with 29 more rows
+#> # ℹ 29 more rows
 ```
 
 ### Formatar resultados da análise de haplótipos do DNAsp com `hap_results()`
@@ -132,7 +132,7 @@ Depois, utilize esse vetor dentro da função `hap_results()`
 
 ``` r
 hap_results(vetor_hap)
-#> # A tibble: 14 x 2
+#> # A tibble: 14 × 2
 #>    haplotype seq                             
 #>    <chr>     <chr>                           
 #>  1 1         ANGBF36849-19|Eigenmannia_viresc
@@ -150,3 +150,22 @@ hap_results(vetor_hap)
 #> 13 7         ANGBF36844-19|Eigenmannia_humbol
 #> 14 8         CIUA1137-21|Eigenmannia_virescen
 ```
+
+### Selecionar sequencias únicas de cada haplotipo com `select_seqs_by_hap()`
+
+Copie os resultados análise de haplótipos do DNAsp e salve como um vetor
+(Só abrir aspas e colar a parte dos resultados que contém os haplótipos
+e nome das sequências).
+
+Carregue o alinhamento (usando `ape::read.FASTA()`) e salve como um
+objeto
+
+Depois, utilize o vetor e o alinhamento dentro da função
+`select_seqs_by_hap()`
+
+``` r
+selected_seqs <- select_seqs_by_hap(haps, seqs)
+```
+
+Por fim, salve o alinhamento com as sequências selecionadas utilizando
+`ape::write.FASTA()`
