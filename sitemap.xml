@@ -1,39 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/404.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/index.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/hap_results.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/info_genbank.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/label_phy.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/pipe.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/ptp_results.html</loc>
-  </url>
-  <url>
-    <loc>https://brunomioto.github.io/nupgen/reference/select_seqs_by_hap.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://brunomioto.github.io/nupgen/404.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/LICENSE-text.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/LICENSE.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/authors.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/index.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/create_arlequin.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/hap_results.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/index.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/info_genbank.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/label_phy.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/pipe.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/ptp_results.html</loc></url>
+<url><loc>https://brunomioto.github.io/nupgen/reference/select_seqs_by_hap.html</loc></url>
 </urlset>
+
