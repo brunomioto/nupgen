@@ -142,3 +142,21 @@ selected_seqs <- select_seqs_by_hap(haps, seqs)
 Por fim, salve o alinhamento com as sequências selecionadas utilizando `
 ape::write.FASTA()`
 
+## Criar arquivo Arlequin a partir de um arquivo FASTA com `create_arlequin()`
+
+A função create_arlequin() cria um arquivo Arlequin (.arp) a partir de um arquivo FASTA com sequências de DNA. Para isso, basta carregar o arquivo FASTA, um arquivo de grupos e usar a função.
+
+- O arquivo de grupos deve ser um data.frame com 2 colunas: "group" (nome dos grupos) e "name" (nome das sequências)
+
+- Caso tenha dúvidas, o pacote tem um arquivo de exemplo, rode: `nupgen::groups_example`
+
+```{r, eval=FALSE}
+fasta <- read.dna("arquivo_fasta.fas",format = "fasta")
+
+grupos <- read.csv("arquivo_grupos.csv")
+
+create_arlequin(fasta, grupos)
+```
+
+
+

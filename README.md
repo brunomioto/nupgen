@@ -59,14 +59,14 @@ ayla <- info_genbank(organism = "Aylacostoma brunneum[Organism]")
 ayla %>% 
   head()
 #> # A tibble: 6 × 6
-#>   code     organism             country    lat   lon gene 
-#>   <chr>    <chr>                <chr>    <dbl> <dbl> <chr>
-#> 1 KU168373 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 2 JQ236704 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 3 KU168375 Aylacostoma brunneum Paraguay -27.4 -55.8 <NA> 
-#> 4 JQ236705 Aylacostoma brunneum Paraguay -27.4 -55.8 COI  
-#> 5 KF918858 Aylacostoma brunneum Paraguay -27.4 -55.8 cytb 
-#> 6 JQ236703 Aylacostoma brunneum Paraguay -27.4 -55.8 COI
+#>   code     organism             country   lat   lon gene 
+#>   <chr>    <chr>                <lgl>   <dbl> <dbl> <chr>
+#> 1 JQ236700 Aylacostoma brunneum NA      -27.4 -55.8 COI  
+#> 2 JQ236701 Aylacostoma brunneum NA      -27.4 -55.8 COI  
+#> 3 KU168374 Aylacostoma brunneum NA      -27.4 -55.8 <NA> 
+#> 4 KU168375 Aylacostoma brunneum NA      -27.4 -55.8 <NA> 
+#> 5 JQ236702 Aylacostoma brunneum NA      -27.4 -55.8 COI  
+#> 6 JQ236704 Aylacostoma brunneum NA      -27.4 -55.8 COI
 ```
 
 ### Formatar resultados da Delimitação de Espécies do PTP (ou bPTP) com `ptp_results()`
@@ -169,3 +169,23 @@ selected_seqs <- select_seqs_by_hap(haps, seqs)
 
 Por fim, salve o alinhamento com as sequências selecionadas utilizando
 `ape::write.FASTA()`
+
+## Criar arquivo Arlequin a partir de um arquivo FASTA com `create_arlequin()`
+
+A função create_arlequin() cria um arquivo Arlequin (.arp) a partir de
+um arquivo FASTA com sequências de DNA. Para isso, basta carregar o
+arquivo FASTA, um arquivo de grupos e usar a função.
+
+- O arquivo de grupos deve ser um data.frame com 2 colunas: “group”
+  (nome dos grupos) e “name” (nome das sequências)
+
+- Caso tenha dúvidas, o pacote tem um arquivo de exemplo, rode:
+  `nupgen::groups_example`
+
+``` r
+fasta <- read.dna("arquivo_fasta.fas",format = "fasta")
+
+grupos <- read.csv("arquivo_grupos.csv")
+
+create_arlequin(fasta, grupos)
+```
